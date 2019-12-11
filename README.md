@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
-> Verify that you are running node 10.16.0 by running node -v in a terminal/console window. Older versions produce errors, but newer versions are fine.
+> Verify that you are running node 12.13.x by running node -v in a terminal/console window. Older versions produce errors, but newer versions are fine.
 
  ```bash
  npm i
