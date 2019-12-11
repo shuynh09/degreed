@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col text-right">
+    <div class="btn-group btn-filters" role="group" aria-label="Filter" (click)='filter($event)'>
+      <button type="button" class="btn btn-primary" data-year="2000">2000's</button>
+      <button type="button" class="btn btn-secondary" data-year="1990">1990's</button>
+    </div>
+  </div>
+</div>
+<div class="table-responsive mt-3">
+  <table class="table table-bordered movies" *ngIf="movies && movies.length">
+    <tr class="" *ngFor="let movie of filteredMovies">
+      <td>
+        <div class="row">
+          <div class="col-12 col-md-2">
+            <img [src]="movie.Poster" />
+          </div>
+          <div class="col">
+            <h3>{{ movie.Title }}</h3>
+            <hr />
+            <div class="row mb-3">
+              <div class="col">
+                <span class="rated">{{ movie.Rated }}</span> {{ movie.Runtime }}
+              </div>
+              <div class="col text-right">
+                {{ movie.Released }}
+              </div>
+            </div>
+            <p>
+              {{ movie.Plot }}
+            </p>
+            <div>
+              <a class="btn btn-imdb" [href]="'https://imdb.com/title/' + movie.imdbID" target="_blank">View on IMDB</a>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
