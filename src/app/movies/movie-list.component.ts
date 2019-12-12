@@ -21,11 +21,18 @@ export class MovieListComponent {
 
   filter($event): void {
     const $el = $event.target;
-    const prevActive = $el.parentElement.querySelector('.active');
 
+    if($el.classList.contains('active')){
+      $el.classList.toggle('active');
+      this.listFilter = null;
+      return;
+    }
+
+    const prevActive = $el.parentElement.querySelector('.active');
     if (prevActive) {
       prevActive.classList.remove('active');
     }
+
     $el.className += ' active';
     this.listFilter = $el.dataset.year;
   }
